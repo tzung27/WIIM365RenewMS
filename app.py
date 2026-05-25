@@ -60,7 +60,13 @@ st.markdown(
 # ------------------------------------------------------------
 # Constants
 # ------------------------------------------------------------
-DEFAULT_LOCAL_XLSX_PATH = r"D:\DeskT\Austin 自動化\新增資料夾\CSP訂單資料_raw.xlsx"
+# 自動偵測執行環境：Streamlit Cloud 的 HOME 為 /home/appuser，本機為 Windows 路徑
+_IS_CLOUD = not Path(r"D:\DeskT").exists()
+DEFAULT_LOCAL_XLSX_PATH = (
+    str(Path(__file__).parent / "CSP訂單資料_raw.xlsx")
+    if _IS_CLOUD
+    else r"D:\DeskT\Austin 自動化\新增資料夾\CSP訂單資料_raw.xlsx"
+)
 STATUS_TO_REMOVE = {"下單異常", "已取消", "已退貨"}
 
 # 每次修改資料清洗邏輯（prepare_cleaned_df）後請更新此版本號，
