@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files (sensitive customer data)
+*.xlsx
+*.xls
+*.csv
+
+# Email files
+*.eml
+
+# Claude session files
+.claude/
+
+# OS
+Thumbs.db
+.DS_Store
