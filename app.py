@@ -1373,7 +1373,7 @@ def render_main_kpi_cards(last_metrics: dict, this_metrics: dict, this_label: st
 st.title("Weblink M365 續約概況與精準行銷推廣平台")
 
 # ── 上傳區（頂部常駐，收合後仍可見上傳狀態）──────────────────────────────────
-_data_exp = st.expander("📂 資料載入與摘要", expanded=True)
+_data_exp = st.expander("📂 資料載入與摘要", expanded=False)
 with _data_exp:
     _ul_col, _info_col = st.columns([2, 3])
     with _ul_col:
@@ -2420,7 +2420,7 @@ with tab_marketing:
 
     with _mid_l:
         with st.container(border=True):
-            st.markdown("<span style='font-size:13px;font-weight:700;'>續約警示時間軸（人數）</span>",
+            st.markdown("<span style='font-size:13px;font-weight:700;'>續約警示時間軸（家數）</span>",
                         unsafe_allow_html=True)
 
             # 已續約在最下方，示警在上方；倒序讓「已到期」顯示在最頂端
